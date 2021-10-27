@@ -10,9 +10,3 @@ Here's the notes and code, maybe screenshots, hell maybe even videos.
 Once SQLModel gets live and PyCharm's support gets final, I'll move it to the PyCharm Guide.
 :::
 
-## Skip Browser
-
-
-
-## Discussion
-

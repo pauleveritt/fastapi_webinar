@@ -2,10 +2,10 @@
 
 ```
 
-
 ```{toctree}
 ---
 maxdepth: 1
+hidden: true
 ---
 01_new_project/index
 02_skip_browser/index
