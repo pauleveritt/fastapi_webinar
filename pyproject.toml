@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "fastapi_webinar"
+version = "0.1.0"
+description = ""
+authors = ["Paul Everitt <pauleveritt@me.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+Sphinx = "^4.2.0"
+furo = "^2021.10.9"
+myst-parser = "^0.15.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
