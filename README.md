@@ -16,15 +16,3 @@ Once SQLModel gets live and PyCharm's support gets final, I'll move it to the Py
 
 ## Discussion
 
-4. **Database**.
-
-    - Refactor -> Move to models
-    - DataGrip by double clicking on the .db file
-    - Mention you might have to download drivers first
-    - Depends() doesn't do typing right
-    - Project-level problems view for things like typing
-5. 
-6. **Frontend**.
-    - Now navigation and usages on the endpoints shows:
-      - the JS, the .http, maybe later the test
-    - `.content` the div.content and make a .css, then show navigation/usage/rename

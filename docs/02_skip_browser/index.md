@@ -63,3 +63,15 @@ In this step, we bring tooling into let us stay in the IDE: HTTP Files then over
 
 ## Discussion
 
+
+
+## `test_main.py`
+
+```{literalinclude} test_main.py
+```
+
+
+## `conftest.py`
+
+```{literalinclude} conftest.py
+```
