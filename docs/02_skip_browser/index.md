@@ -11,25 +11,47 @@ In this step, we bring tooling into let us stay in the IDE: HTTP Files then over
 ## Demo
 
 - Run the .http file for both endpoints
-- Use intention action to open endpoint in a browser
-  - Show but don't demo, write to `.http`
-- Install pytest via pyproject.toml dev dependency `^6.2.5` then poetry update and setup in PyCharm
-- Make a `tests` directory
-- Cmd-Shift-T to make tests
-- Emphasize endpoints support in client.get
-  - Autocomplete, refactor rename, quick docs
 - Emphasize parameter in POST
   - Rename parameter
   - Search for usages
   - Refactor rename, then undo
   - Autocomplete in `.http`
   - Still some work to do: Not yet on type inference, rename in other places, `.http` up in usages
-- Move client = to conftest.py
+- *(d02a)* Add a test for status code:
+```
+> {%
+   client.test("Request executed successfully", function() {
+      client.assert(response.status === 200, "Response status is not 200");
+   });
+%}
+```
+- Show (but **don't demo**) intention actions on an endpoint:
+  - Open endpoint in a browser
+  - Write to `.http`
+- Stop the server
+- Install pytest via pyproject.toml dev dependency `^6.2.5` then poetry update and setup in PyCharm
+- Make a `tests/conftest.py` file
+- Cmd-Shift-T to make tests
+- Go into "TDD Mode"
+- Add:
+  - `client = TestClient(app)`
+  - `response = client.get("/")`
+  - `assert response.stat` and autocomplete fails
+  - Show the type is `Any`
+  - Install requests via import then remove the import
+  - Finish the assert
+  - `assert "Hello World == response.json()["message"]`
 - Put tests on autorun with delay
+- Move client = to conftest.py
+  - Select the line for `client =` 
+  - Refactor -> Move
+  - Add `client` to the test
 - Write next test
+  - Copy the body from the first
 - Show the Endpoints tab
   - Shows putting structure to work for DX
   - Only shows when endpoints are detected
+  - Works when using `APIRouter` also
   - Navigate to declaration when browsing endpoints
   - Shows type info
   - Add docstring and see reflection
