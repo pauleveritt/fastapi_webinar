@@ -12,28 +12,7 @@ Once SQLModel gets live and PyCharm's support gets final, I'll move it to the Py
 
 ## Skip Browser
 
-The typical FastAPI dev cycle is to switch between the editor and a browser reload, perhaps with Postman.
-In this step, we bring tooling into let us stay in the IDE: HTTP Files then over to `pytest`. 
 
-- We're going to start refactoring to implement Heroes, but first, write tests
-- Run the .http file for both endpoints
-- Install pytest via pyproject.toml dev dependency ^ 6.2.5 then poetry update and setup in PyCharm
-- Make a tests directory ** and mark it?
-- Cmd-Shift-T to make tests
-- Emphasize endpoints support in client.get
-  - Autocomplete, refactor rename, quick docs
-- Emphasize parameter in POST
-  - Not yet on type inference
-- Move client = to conftest.py
-- Write next test
-- Put tests on autorun with delay
-- Show the Endpoints tab
-- Add docstring
-- Show HTTP Client tab
-- .http and testing response values
-- Commit
-
-- (SR) response_model and mypy
 
 ## Discussion
 
