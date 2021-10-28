@@ -14,17 +14,17 @@ The latest EAP bundles the Poetry plugin (works for Community Edition too.)
 - Once launched, full screen the window
 - Enable Version Control Integration, check in, commit
 - Show the run config's uvicorn setup and any Settings
+  - (AK) The SMART way we do uvicorn and sniffing for the app
 - The generated app actually doesn't do uvicorn import and .run()
-  - (*) ASGI as a standard and well-known entry points help tooling
+  - (SR) ASGI as a standard and well-known tooling
 - Run it, click on link
 - Show /docs/ in browser
-  - (*) Integrating (deeply) with OpenAPI really opens up tooling
+  - (SR) Integrating (deeply) with OpenAPI really opens up tooling
 - Commit
 
 
 ## Discussion
 
-- (AK) The run config opts for the module thingy, not script name
 - (SR) Any plans for knobs in `pyproject.toml`?
 - (Both) The `8080`/`8088` conundrum, perhaps `pyproject.toml` and some standard?
 

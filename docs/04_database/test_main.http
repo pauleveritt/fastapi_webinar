@@ -1,0 +1,16 @@
+# Test your FastAPI endpoints
+
+GET http://127.0.0.1:8000/heroes/
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/heroes/1
+Accept: application/json
+
+###
+
+DELETE http://127.0.0.1:8000/heroes/1
+Accept: application/json
+
+###

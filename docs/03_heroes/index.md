@@ -38,12 +38,12 @@ Let's start implementing the Heroes tutorial from SQLModel, but first, just as P
     ]
   
   
-    @app.get("/heroes/", response_model=list[Hero])
+    @app.get("/heroes/")
     def read_heroes():
         return heroes
   
   
-    @app.get("/heroes/{hero_id}", response_model=Hero)
+    @app.get("/heroes/{hero_id}")
     def read_hero(hero_id: int):
         return heroes[hero_id]
   
@@ -53,8 +53,10 @@ Let's start implementing the Heroes tutorial from SQLModel, but first, just as P
         del heroes[hero_id]
         return dict(ok=True)
   ```
-- Now return to the first test and run just it...it passes
-- Add a test for the JSON and another test for direct method:
+- (SK) Explain the role of `BaseModel`
+- Now return to the first test and run just that one...it passes
+  - (*) Our tests are a "Smarter" consumer of our code, just like JS
+- **USE `fat` Live Template** to add a test for the JSON and another test for direct method: 
   ```python
   def test_read_heroes(client):
       response = client.get("/heroes/")
@@ -84,14 +86,23 @@ Let's start implementing the Heroes tutorial from SQLModel, but first, just as P
     ```
 - Use debugger first to simulate confused about dict vs. instance
 - But OpenAPI doesn't know what is our response type
-- response_model with type hint in test
+- Add to first two endpoints
+- Show in `/docs/`
+  - (SK) Explain the role of `BaseModel` and `response_model`
 - Navigation and usages thanks to type hint on function args
 - Add other endpoints and tests
 - Refactor Rename Heroes -> Heros
+- Undo
 - Quick documentation inlay and Endpoints tab for docs
+  - (AK) Does this render Google Style Docstrings? 
 - Finally, extract model stuff to `models.py`
+- How are we doing on `mypy`
+  - (*) (SR) Anything special done for FastAPI/SQLModel/mypy?
 
 ## Discussion
+
+- (Both) Show how I wish typing and response model worked in test-first
+- (SR) Do endpoint-writers care about tests?
 
 ## `main.py`
 

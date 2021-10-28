@@ -10,17 +10,22 @@ In this step, we bring tooling into let us stay in the IDE: HTTP Files then over
 
 ## Demo
 
-- Run the .http file for both endpoints
+- Run `test_main.http` file for both endpoints
+  - Autocomplete
+  - (AK) How do we extract that structure for static analysis?
+  - (SR) What other "structure" is in a path operation?
+    * Param, type, doc, enum
+  - (PE) "Fail Faster"
 - Emphasize parameter in POST
   - Rename parameter
   - Search for usages
   - Refactor rename, then undo
   - Autocomplete in `.http`
   - Still some work to do: Not yet on type inference, rename in other places, `.http` up in usages
-- *(d02a)* Add a test for status code:
+- Add a test for status code:
 ```
 > {%
-   client.test("Request executed successfully", function() {
+   client.test("Request executed successfully", () => {
       client.assert(response.status === 200, "Response status is not 200");
    });
 %}
@@ -57,13 +62,16 @@ In this step, we bring tooling into let us stay in the IDE: HTTP Files then over
   - Add docstring and see reflection
   - Show HTTP Client tab
     - .http and testing response values
+- Install mypy with `poetry add -D mypy`
+- Run it
 - Commit
 
-- (SR) response_model and mypy
 
 ## Discussion
 
-
+- (SR) Structure and DX gets more value out of mypy
+- (SR) How does that compare to your frontend DX experience?
+- (AK) "Endpoints" let tooling use structure to drive DX...what's an "endpoint"?
 
 ## `test_main.py`
 
